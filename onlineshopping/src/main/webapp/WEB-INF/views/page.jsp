@@ -41,7 +41,7 @@
 		<!-- Page Content -->
 
 		<div class="content">
-			
+
 			<!-- Loading the home content -->
 			<c:if test="${userClickHome == true }">
 				<%@ include file="home.jsp"%>
@@ -57,6 +57,12 @@
 				<%@ include file="contact.jsp"%>
 			</c:if>
 
+			<!-- Load only when user clicks  All Products or Category -->
+			<c:if
+				test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+				<%@ include file="listProducts.jsp"%>
+			</c:if>
+
 		</div>
 
 		<!-- Footer -->
@@ -65,6 +71,9 @@
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/jquery.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<script src="${js}/myapp.js"></script>
+		
+		
 	</div>
 </body>
 
