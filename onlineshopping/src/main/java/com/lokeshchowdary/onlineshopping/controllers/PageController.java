@@ -18,7 +18,8 @@ public class PageController {
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
-
+		
+		System.out.println("Hi loki");
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Home");
 		mv.addObject("userClickHome", true);
