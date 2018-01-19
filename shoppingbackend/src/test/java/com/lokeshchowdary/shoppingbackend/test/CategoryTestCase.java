@@ -6,16 +6,16 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.lokeshchowdary.shoppingbackend.dao.CategoryDAO;
-import com.lokeshchowdary.shoppingbackend.dto.Category;
+import com.lokeshchowdary.shoppingbackend.dao.ProductDAO;
+import com.lokeshchowdary.shoppingbackend.dto.Product;
 
 public class CategoryTestCase {
 	
 	private static AnnotationConfigApplicationContext context;
 	
-	private static CategoryDAO categoryDAO;
+	private static ProductDAO productDAO;
 	
-	private Category category;
+	private Product product;
 	
 	
 	@BeforeClass
@@ -24,7 +24,7 @@ public class CategoryTestCase {
 		context=new AnnotationConfigApplicationContext();
 		context.scan("com.lokeshchowdary.shoppingbackend");
 		context.refresh();
-		categoryDAO=(CategoryDAO)context.getBean("categoryDAO");
+		productDAO=(ProductDAO)context.getBean("productDAO");
 		
 	}
 	
@@ -74,42 +74,49 @@ public class CategoryTestCase {
 //		
 //	}
 	
-	@Test
-	public void testCRUDCategory() {
+//	@Test
+//	public void testCRUDCategory() {
+//	
+//		product=new Product();
+//		
+//		product.setName("Oppo Selfie S53");
+//		product.setBrand("Oppo");
+//		product.setDescription("This is some description for Oppo Mobiles");
+//		product.setUnitPrice(25000);
+//		product.setActive(true);
+//		product.setCategoryId(3);
+//		product.setSupplierId(3);
+//		
+//		assertEquals("Something went wrong while inserting a new product!",true,productDAO.add(product));
+//		
+//		//fetching and updating the product
+//		
+//		product=productDAO.get(2);
+//		product.setName("Samsung Galaxy S8");
+//		assertEquals("Something went wrong while updating the existing record!",true,productDAO.update(product));
+//		
+//		//delete the product
+//		assertEquals("Something went wrong while deleting the existing record!",true,productDAO.delete(product));
+//		
+//		//fetching the list
+//		assertEquals("Something went wrong while fetching the list of products",6,productDAO.list().size());
+//	}
 	
-		category=new Category();
+	@Test
+	public void testListActiveProducts() {
 		
-		category.setName("Laptop");
-		category.setDescription("This is a Laptop");
-		category.setImageURL("CAT_1.png");
-		assertEquals("Successfully add a category inside the table",true,categoryDAO.add(category));
-		
-		category=new Category();
-		
-		category.setName("Television");
-		category.setDescription("This is a Television");
-		category.setImageURL("CAT_2.png");
-		assertEquals("Successfully add a category inside the table",true,categoryDAO.add(category));
-		
-		category=new Category();
-		
-		category.setName("Mobile");
-		category.setDescription("This is a Mobile");
-		category.setImageURL("CAT_3.png");
-		assertEquals("Successfully add a category inside the table",true,categoryDAO.add(category));
-		
-		//fetching and updating the category
-		
-		category=categoryDAO.get(2);
-		category.setName("TV");
-		assertEquals("Successfully updated a single category on the table",true,categoryDAO.update(category));
-		
-		//delete the category
-		assertEquals("Successfully deleted a single category on the table",true,categoryDAO.delete(category));
-		
-		//fetching the list
-		assertEquals("Successfully fetched the list of category from the table",2,categoryDAO.list().size());
+		assertEquals("Something went wrong while fetching the list of products",3,productDAO.listActiveProductsByCategory(3).size());
+		assertEquals("Something went wrong while fetching the list of products",2,productDAO.listActiveProductsByCategory(1).size());
 		
 	}
+	
+	@Test
+	public void getLatestActiveProducts() {
+		
+		assertEquals("Something went wrong while fetching the list of products",3,productDAO.getLatestActiveProducts(3).size());
+		
+		
+	}
+	
 
 }
