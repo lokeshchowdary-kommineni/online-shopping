@@ -9,7 +9,7 @@
    	http://www.springframework.org/schema/mvc
    	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:component-scan base-package="com.lokeshchowdary.onlineshopping.controllers"></context:component-scan>
+	<context:component-scan base-package="com.lokeshchowdary.onlineshopping"></context:component-scan>
 	<context:component-scan base-package="com.lokeshchowdary.shoppingbackend"></context:component-scan>
 	
 	<bean id="viewResolver"

@@ -6,10 +6,10 @@
 	
 		<div class="col-xs-12">
 		
-			<ol class="bredcrumb">
+			<ol class="breadcrumb">
 			
 				<li><a href="${contextRoot}/home">Home</a></li>
-				<li><a href="${contextRoot}/show/all/products">Home</a></li>
+				<li><a href="${contextRoot}/show/all/products">Products</a></li>
 				<li class="active">${product.name}</li>
 			
 			</ol>
@@ -40,7 +40,7 @@
 			<p>${product.description}</p>
 			<hr/>
 			
-			<h4>Price: <strong> &#8337; ${product.unitPrice}/-</strong></h4>
+			<h4>Price: <strong> &#8377; ${product.unitPrice}/-</strong></h4>
 			<hr/>
 			
 			<h6>Qty. Available: ${product.quantity}</h6>
@@ -48,7 +48,7 @@
 			<a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success">
 				<span class="glyphicon glyphicon-shopping-cart"></span>Add to Cart</a>
 				
-			<a href="${contextRoot}/show/all/products" class="btn btn-success">Back</a>	
+			<a href="${contextRoot}/show/all/products" class="btn btn-primary">Back</a>	
 			
 		</div>
 		
