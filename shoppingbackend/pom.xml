@@ -20,7 +20,7 @@
 	<dependencies>
 
 		<!-- SPRING -->
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -32,20 +32,20 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- SPRING ORM -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
+
 		<!-- JUNIT version 4.12 -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -53,21 +53,21 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- H2 Database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.196</version>
 		</dependency>
-		
+
 		<!-- Hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>	
+			<version>${hibernate.version}</version>
 		</dependency>
-		
+
 		<!-- Database connection pooling -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -78,36 +78,51 @@
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
 				</exclusion>
-			</exclusions>	
+			</exclusions>
 		</dependency>
-		
+
 		<!-- Jackson -->
 
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-databind</artifactId>
-		    <version>${jackson.version}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>com.fasterxml.jackson.core</groupId>
-		    <artifactId>jackson-annotations</artifactId>
-		    <version>${jackson.version}</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
-		
+
 		<!-- SLF4J Logging -->
 		<dependency>
-		    <groupId>ch.qos.logback</groupId>
-		    <artifactId>logback-classic</artifactId>
-		    <version>1.2.3</version>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>jcl-over-slf4j</artifactId>
-		    <version>1.7.25</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.7.25</version>
 		</dependency>
-		
+
+		<!-- Validation -->
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.1.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>6.0.7.Final</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
